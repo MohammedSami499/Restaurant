@@ -1,7 +1,13 @@
 package com.spring.restuarant.model;
 
-public class Order {
-    private Long id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Order extends BaseEntity {
     private String orderName;
     private int price;
     private String img;

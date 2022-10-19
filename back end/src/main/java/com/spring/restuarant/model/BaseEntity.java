@@ -5,8 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class Category extends BaseEntity {
-    private String categoryName;
+@AllArgsConstructor
+public class BaseEntity {
+    private Long id;
 }
