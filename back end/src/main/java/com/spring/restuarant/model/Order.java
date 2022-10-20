@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 
@@ -18,6 +19,7 @@ public class Order extends CategoryOrder {
     private int price;
     private String img;
     @Lob
+    @Type(type = "org.hibernate.type.TextType")
     private String description;
 
     @ManyToOne
