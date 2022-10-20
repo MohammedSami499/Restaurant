@@ -14,15 +14,16 @@ public class DataRestApiConfig implements RepositoryRestConfigurer {
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
 
         HttpMethod[] preventMethod = {HttpMethod.GET , HttpMethod.DELETE , HttpMethod.POST , HttpMethod.PUT};
-        config.getExposureConfiguration()
-                .forDomainType(Category.class)
+        disableHttpMethods(config , Category.class , preventMethod);
+        disableHttpMethods(config , Order.class , preventMethod);
+
+    }
+
+    public void disableHttpMethods(RepositoryRestConfiguration configurer , Class theClass , HttpMethod[] preventMethod){
+
+        configurer.getExposureConfiguration()
+                .forDomainType(theClass)
                 .withAssociationExposure(((metdata, httpMethods) -> httpMethods.disable(preventMethod)))
                 .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(preventMethod));
-
-        config.getExposureConfiguration()
-                .forDomainType(Order.class)
-                .withAssociationExposure(((metdata, httpMethods) -> httpMethods.disable(preventMethod)))
-                .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(preventMethod));
-
     }
 }
