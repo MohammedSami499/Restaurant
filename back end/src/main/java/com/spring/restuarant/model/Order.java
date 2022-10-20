@@ -2,6 +2,7 @@ package com.spring.restuarant.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -10,8 +11,9 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "order")
+@Table(name = "order_food")
 public class Order extends BaseEntity {
+
     private String orderName;
     private int price;
     private String img;

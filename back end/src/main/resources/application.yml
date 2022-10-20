@@ -1,0 +1,22 @@
+server:
+  port: 8088
+spring:
+  profiles:
+    active: postgres
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: postgres
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/restaurant
+    password: '12345'
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+    database: POSTGRESQL
