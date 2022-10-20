@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Entity
 @Table(name = "orders")
-public class Order extends BaseEntity {
+public class Order extends CategoryOrder {
 
     private String orderName;
     private int price;

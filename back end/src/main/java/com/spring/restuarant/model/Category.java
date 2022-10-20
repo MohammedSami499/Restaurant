@@ -12,7 +12,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Category extends BaseEntity {
+public class Category extends CategoryOrder {
     private String categoryName;
 
     @OneToMany(mappedBy = "category")
