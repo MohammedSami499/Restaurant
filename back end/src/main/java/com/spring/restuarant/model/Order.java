@@ -1,5 +1,6 @@
 package com.spring.restuarant.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -22,6 +23,7 @@ public class Order extends CategoryOrder {
     @Type(type = "org.hibernate.type.TextType")
     private String description;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
