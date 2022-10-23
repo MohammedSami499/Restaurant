@@ -4,12 +4,14 @@ import com.spring.restuarant.model.Category;
 import com.spring.restuarant.model.Order;
 import com.spring.restuarant.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin("http://localhost:4200/add CrossOrigin annotation #27\n")
 public class OrderController {
 
     OrderService orderService;
