@@ -12,7 +12,6 @@ import java.util.List;
 @RestController
 public class CategoryController {
 
-
     CategoryService categoryService;
 
     @Autowired
@@ -26,7 +25,4 @@ public class CategoryController {
     public List<Category> getAllCategories(){
         return categoryService.getAllCategories();
     }
-
-
-
 }
